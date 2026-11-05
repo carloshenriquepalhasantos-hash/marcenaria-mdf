@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcenaria Mestre | Móveis Planejados em MDF sob Medida</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        wood: {
+                            50: '#FAF5EF',
+                            100: '#F4EAE0',
+                            200: '#E7D2BF',
+                            300: '#D6B495',
+                            400: '#C2916B',
+                            500: '#B45309', // Main Accent Warm Amber/Wood
+                            600: '#92400E',
+                            700: '#78350F',
+                            800: '#451A03',
+                            900: '#270E02',
+                        },
+                        apple: {
+                            bg: '#FBFBFD',
+                            card: '#FFFFFF',
+                            dark: '#1D1D1F',
+                            subtle: '#86868B',
+                            border: '#E5E5E7'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'apple': '0 20px 40px -15px rgba(0, 0, 0, 0.07)',
+                        'glow': '0 10px 30px -10px rgba(180, 83, 9, 0.3)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FBFBFD;
+            color: #1D1D1F;
+            overflow-x: hidden;
+        }
+        .font-display {
+            font-family: 'Outfit', sans-serif;
+        }
+        /* Glassmorphism subtle */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(229, 229, 231, 0.7);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F1F1F1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D1D5DB;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #B45309;
+        }
+        .wood-gradient-text {
+            background: linear-gradient(135deg, #1D1D1F 30%, #B45309 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .wood-badge-gradient {
+            background: linear-gradient(135deg, #B45309 0%, #78350F 100%);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-wood-500 selection:text-white">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-gray-200/60 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- LOGO: Apple Minimalist Style + Wood Craft Motif -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl wood-badge-gradient flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform duration-300">
+                    <svg class="w-6 h-6 stroke-current" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <!-- Stylized Geometric Wood Block & Diamond Grain -->
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                        <path d="M2 17l10 5 10-5"></path>
+                        <path d="M2 12l10 5 10-5"></path>
+                    </svg>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-display font-bold text-xl tracking-tight text-apple-dark group-hover:text-wood-500 transition-colors">
+                        MESTRE<span class="text-wood-500">.</span>MDF
+                    </span>
+                    <span class="text-[10px] tracking-widest uppercase font-semibold text-apple-subtle">Marcenaria Sob Medida</span>
+                </div>
+            </a>
+
+            <!-- NAVIGATION LINKS (No Contact link as requested) -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#inicio" class="text-sm font-medium text-apple-dark hover:text-wood-500 transition-colors">Início</a>
+                <a href="#sobre" class="text-sm font-medium text-apple-dark hover:text-wood-500 transition-colors">Sobre Nós</a>
+                <a href="#ambientes" class="text-sm font-medium text-apple-dark hover:text-wood-500 transition-colors">Ambientes</a>
+                <a href="#diferenciais" class="text-sm font-medium text-apple-dark hover:text-wood-500 transition-colors">Diferenciais</a>
+                <a href="#catalogo" class="text-sm font-medium text-apple-dark hover:text-wood-500 transition-colors">Catálogo</a>
+                <a href="#simulador" class="text-sm font-medium text-apple-dark hover:text-wood-500 transition-colors">Simulador</a>
+            </nav>
+
+            <!-- ACTION BUTTON: Direct WhatsApp -->
+            <div class="flex items-center gap-4">
+                <a href="https://wa.me/5549999710357?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20uma%20medição%20para%20meu%20projeto." target="_blank" rel="noopener noreferrer" 
+                   class="hidden sm:inline-flex items-center gap-2 bg-apple-dark hover:bg-wood-600 text-white font-medium text-xs sm:text-sm px-5 py-2.5 rounded-full shadow-md hover:shadow-glow transition-all duration-300 transform hover:-translate-y-0.5">
+                    <i data-lucide="phone-call" class="w-4 h-4 text-emerald-400"></i>
+                    <span>(49) 99971-0357</span>
+                </a>
+                
+                <!-- Mobile Menu Trigger -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-apple-dark focus:outline-none" aria-label="Abrir Menu">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden glass-card border-b border-gray-200 px-6 py-6 space-y-4 shadow-xl">
+            <a href="#inicio" class="block text-base font-medium text-apple-dark hover:text-wood-500">Início</a>
+            <a href="#sobre" class="block text-base font-medium text-apple-dark hover:text-wood-500">Sobre Nós</a>
+            <a href="#ambientes" class="block text-base font-medium text-apple-dark hover:text-wood-500">Ambientes</a>
+            <a href="#diferenciais" class="block text-base font-medium text-apple-dark hover:text-wood-500">Diferenciais</a>
+            <a href="#catalogo" class="block text-base font-medium text-apple-dark hover:text-wood-500">Catálogo</a>
+            <a href="#simulador" class="block text-base font-medium text-apple-dark hover:text-wood-500">Simulador de Projeto</a>
+            <a href="https://wa.me/5549999710357?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento." target="_blank" class="w-full flex items-center justify-center gap-2 bg-emerald-600 text-white font-medium py-3 rounded-xl">
+                <i data-lucide="message-square" class="w-5 h-5"></i>
+                Falar no WhatsApp (49) 99971-0357
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION (High-converting Headline + Apple Aesthetics) -->
+    <section id="inicio" class="pt-32 pb-20 md:pt-40 md:pb-28 relative overflow-hidden">
+        <!-- Background subtle shapes -->
+        <div class="absolute top-0 right-1/4 w-96 h-96 bg-wood-100/40 rounded-full blur-3xl -z-10"></div>
+        <div class="absolute top-1/3 left-10 w-72 h-72 bg-amber-50/50 rounded-full blur-3xl -z-10"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-wood-50 border border-wood-200 text-wood-700 text-xs font-semibold uppercase tracking-wider mb-6 animate-pulse">
+                <i data-lucide="ruler" class="w-3.5 h-3.5 text-wood-500"></i>
+                <span>Medimos 100% no local antes de fabricar</span>
+            </div>
+
+            <!-- Main High-Converting Headline -->
+            <h1 class="font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-apple-dark max-w-5xl mx-auto leading-[1.1] mb-6">
+                Transforme seu espaço em uma <span class="wood-gradient-text">obra de arte sob medida.</span>
+            </h1>
+
+            <p class="text-base sm:text-xl text-apple-subtle max-w-3xl mx-auto font-normal leading-relaxed mb-10">
+                Design autoral em MDF de alta densidade e precisão milimétrica. Nós medimos cada canto do seu imóvel, projetamos em 3D e entregamos a perfeição funcional que o seu lar merece.
+            </p>
+
+            <!-- Call To Actions -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto mb-16">
+                <a href="https://wa.me/5549999710357?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20uma%20visita%20para%20medição%20gratuita." target="_blank" rel="noopener noreferrer" 
+                   class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-wood-500 hover:bg-wood-600 text-white font-semibold px-8 py-4 rounded-2xl shadow-lg hover:shadow-glow transition-all duration-300 transform hover:-translate-y-1">
+                    <i data-lucide="message-circle" class="w-5 h-5"></i>
+                    <span>Solicitar Orçamento no WhatsApp</span>
+                </a>
+                <a href="#catalogo" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-100 text-apple-dark font-medium border border-apple-border px-8 py-4 rounded-2xl transition-all duration-300">
+                    <span>Explorar Catálogo</span>
+                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+
+            <!-- Apple-Style Interactive Showpiece Mockup Showcase -->
+            <div class="relative max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-2xl border border-gray-200/80 bg-white p-3 sm:p-4">
+                <div class="relative h-[320px] sm:h-[500px] rounded-2xl overflow-hidden group">
+                    <img id="hero-image" 
+                         src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80" 
+                         alt="Cozinha Planejada de Luxo em MDF" 
+                         class="w-full h-full object-cover transition-all duration-700 transform group-hover:scale-105">
+                    
+                    <!-- Overlay Overlay Details -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex flex-col justify-end p-6 sm:p-10 text-left text-white">
+                        <div class="flex items-center gap-2 text-wood-300 text-xs font-semibold tracking-wider uppercase mb-2">
+                            <i data-lucide="check-circle-2" class="w-4 h-4"></i> Project Showcase • MDF Carvalho & Grafite
+                        </div>
+                        <h3 class="text-2xl sm:text-4xl font-display font-bold">Cozinha Integrada & Ilha Gourmet</h3>
+                        <p class="text-sm sm:text-base text-gray-200 mt-1 max-w-xl">Puxadores ocultos cava, iluminação em LED embutida e MDF Ultra resistente à umidade.</p>
+                    </div>
+
+                    <!-- Interactive Switcher Pins -->
+                    <div class="absolute top-4 right-4 flex gap-2 bg-black/40 backdrop-blur-md p-1.5 rounded-full border border-white/20">
+                        <button onclick="changeHeroImage('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80', 'Cozinha Integrada & Ilha Gourmet')" class="px-3 py-1 rounded-full text-xs font-medium text-white bg-white/20 hover:bg-white/40 transition">Cozinha</button>
+                        <button onclick="changeHeroImage('https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1600&q=80', 'Dormitório Casal & Closet Sob Medida')" class="px-3 py-1 rounded-full text-xs font-medium text-white/80 hover:bg-white/40 transition">Quarto/Closet</button>
+                        <button onclick="changeHeroImage('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=80', 'Painel Ripado & Home Theater')" class="px-3 py-1 rounded-full text-xs font-medium text-white/80 hover:bg-white/40 transition">Sala/Painel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- METRICS / DIFFERENTIAL BAR -->
+    <section class="py-12 bg-white border-y border-apple-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="space-y-1">
+                    <p class="font-display text-3xl sm:text-4xl font-extrabold text-apple-dark">100%</p>
+                    <p class="text-xs sm:text-sm text-apple-subtle font-medium">MDF Naval de Alta Densidade</p>
+                </div>
+                <div class="space-y-1">
+                    <p class="font-display text-3xl sm:text-4xl font-extrabold text-wood-500">0.1mm</p>
+                    <p class="text-xs sm:text-sm text-apple-subtle font-medium">Precisão na Medição a Laser</p>
+                </div>
+                <div class="space-y-1">
+                    <p class="font-display text-3xl sm:text-4xl font-extrabold text-apple-dark">5 Anos</p>
+                    <p class="text-xs sm:text-sm text-apple-subtle font-medium">Garantia Estrutural Total</p>
+                </div>
+                <div class="space-y-1">
+                    <p class="font-display text-3xl sm:text-4xl font-extrabold text-wood-500">+1.200</p>
+                    <p class="text-xs sm:text-sm text-apple-subtle font-medium">Ambientes Transformados</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE NÓS / NOSSO PROCESSO (Apple Philosophy) -->
+    <section id="sobre" class="py-24 bg-apple-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="max-w-3xl mb-16">
+                <h2 class="text-xs font-semibold text-wood-500 uppercase tracking-widest mb-3">Engenharia & Marcenaria</h2>
+                <h3 class="font-display text-3xl sm:text-5xl font-bold text-apple-dark leading-tight">
+                    Primeiro medimos com precisão. Depois criamos com alma.
+                </h3>
+                <p class="mt-4 text-apple-subtle text-base sm:text-lg">
+                    Não acreditamos em soluções padronizadas. Cada painel, armário ou gaveta é desenhado exatamente para o seu espaço disponível, maximizando cada centímetro útil.
+                </p>
+            </div>
+
+            <!-- Steps Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                
+                <!-- Step 1 -->
+                <div class="glass-card p-8 rounded-3xl relative hover:shadow-apple transition-all duration-300">
+                    <span class="text-4xl font-display font-extrabold text-wood-200">01</span>
+                    <div class="w-12 h-12 rounded-2xl bg-wood-100 text-wood-600 flex items-center justify-center my-6">
+                        <i data-lucide="ruler" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-apple-dark mb-2">Medição Técnica</h4>
+                    <p class="text-sm text-apple-subtle leading-relaxed">
+                        Nossa equipe vai até o seu imóvel com trena a laser e gabaritos para aferir todas as paredes, tomadas e prumadas.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="glass-card p-8 rounded-3xl relative hover:shadow-apple transition-all duration-300">
+                    <span class="text-4xl font-display font-extrabold text-wood-200">02</span>
+                    <div class="w-12 h-12 rounded-2xl bg-wood-100 text-wood-600 flex items-center justify-center my-6">
+                        <i data-lucide="box" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-apple-dark mb-2">Projeto 3D Realista</h4>
+                    <p class="text-sm text-apple-subtle leading-relaxed">
+                        Desenvolvemos a maquete tridimensional com texturas reais de MDF e iluminação para você visualizar tudo antes de produzir.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="glass-card p-8 rounded-3xl relative hover:shadow-apple transition-all duration-300">
+                    <span class="text-4xl font-display font-extrabold text-wood-200">03</span>
+                    <div class="w-12 h-12 rounded-2xl bg-wood-100 text-wood-600 flex items-center justify-center my-6">
+                        <i data-lucide="hammer" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-apple-dark mb-2">Corte & Usinagem</h4>
+                    <p class="text-sm text-apple-subtle leading-relaxed">
+                        Chapas de MDF de primeira linha cortadas em esquadrejadeiras de alta precisão com fita de bordo aplicada sob calor.
+                    </p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="glass-card p-8 rounded-3xl relative hover:shadow-apple transition-all duration-300">
+                    <span class="text-4xl font-display font-extrabold text-wood-200">04</span>
+                    <div class="w-12 h-12 rounded-2xl bg-wood-100 text-wood-600 flex items-center justify-center my-6">
+                        <i data-lucide="sparkles" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-apple-dark mb-2">Montagem Limpa</h4>
+                    <p class="text-sm text-apple-subtle leading-relaxed">
+                        Instalação silenciosa, alinhamento perfeito de portas com amortecedores e limpeza completa após o encerramento.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE CATALOG / PORTFOLIO WITH FILTERS -->
+    <section id="catalogo" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <h2 class="text-xs font-semibold text-wood-500 uppercase tracking-widest mb-2">Nosso Portfólio</h2>
+                    <h3 class="font-display text-3xl sm:text-5xl font-bold text-apple-dark">Catálogo de Ambientes</h3>
+                </div>
+                <!-- Filter Buttons -->
+                <div class="flex flex-wrap gap-2 mt-6 md:mt-0">
+                    <button onclick="filterCatalog('todos')" class="catalog-btn active px-5 py-2.5 rounded-full text-xs font-semibold transition-all duration-300 bg-apple-dark text-white">Todos</button>
+                    <button onclick="filterCatalog('cozinha')" class="catalog-btn px-5 py-2.5 rounded-full text-xs font-semibold transition-all duration-300 bg-gray-100 text-apple-dark hover:bg-gray-200">Cozinhas</button>
+                    <button onclick="filterCatalog('quarto')" class="catalog-btn px-5 py-2.5 rounded-full text-xs font-semibold transition-all duration-300 bg-gray-100 text-apple-dark hover:bg-gray-200">Quartos & Closets</button>
+                    <button onclick="filterCatalog('sala')" class="catalog-btn px-5 py-2.5 rounded-full text-xs font-semibold transition-all duration-300 bg-gray-100 text-apple-dark hover:bg-gray-200">Salas & Painéis</button>
+                    <button onclick="filterCatalog('office')" class="catalog-btn px-5 py-2.5 rounded-full text-xs font-semibold transition-all duration-300 bg-gray-100 text-apple-dark hover:bg-gray-200">Home Office</button>
+                </div>
+            </div>
+
+            <!-- Catalog Items Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="catalog-grid">
+                
+                <!-- Item 1: Cozinha -->
+                <div class="catalog-item cozinha group cursor-pointer" onclick="openModal('Cozinha Minimalista Amadeirada', 'MDF Carvalho Americano com portas em Laca fosca. Ferragens com amortecimento slow-motion.', 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=80')">
+                    <div class="relative h-80 rounded-3xl overflow-hidden bg-gray-100 mb-4 shadow-sm group-hover:shadow-xl transition-all duration-300">
+                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80" alt="Cozinha MDF" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-bold text-apple-dark uppercase tracking-wider">Cozinha</div>
+                        <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="bg-white/90 text-apple-dark text-xs font-semibold px-4 py-2 rounded-full flex items-center gap-2">
+                                <i data-lucide="eye" class="w-4 h-4"></i> Ampliar Projeto
+                            </span>
+                        </div>
+                    </div>
+                    <h4 class="font-display text-xl font-bold text-apple-dark group-hover:text-wood-500 transition-colors">Cozinha Minimalista Amadeirada</h4>
+                    <p class="text-xs text-apple-subtle mt-1">MDF Carvalho Americano • Puxadores Cava</p>
+                </div>
+
+                <!-- Item 2: Quarto / Closet -->
+                <div class="catalog-item quarto group cursor-pointer" onclick="openModal('Closet Casal Integrado', 'Closet aberto com colunas em MDF amadeirado, prateleiras reforçadas e iluminação em fitas de LED 3000K.', 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=80')">
+                    <div class="relative h-80 rounded-3xl overflow-hidden bg-gray-100 mb-4 shadow-sm group-hover:shadow-xl transition-all duration-300">
+                        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80" alt="Closet MDF" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-bold text-apple-dark uppercase tracking-wider">Quarto</div>
+                        <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="bg-white/90 text-apple-dark text-xs font-semibold px-4 py-2 rounded-full flex items-center gap-2">
+                                <i data-lucide="eye" class="w-4 h-4"></i> Ampliar Projeto
+                            </span>
+                        </div>
+                    </div>
+                    <h4 class="font-display text-xl font-bold text-apple-dark group-hover:text-wood-500 transition-colors">Closet Casal Integrado</h4>
+                    <p class="text-xs text-apple-subtle mt-1">MDF Nogueira • Iluminação LED Integrada</p>
+                </div>
+
+                <!-- Item 3: Sala -->
+                <div class="catalog-item sala group cursor-pointer" onclick="openModal('Painel Ripado & Rack Flutuante', 'Painel ripado em MDF feito sob medida com ocultação de cabos e rack suspenso com gavetas de toque.', 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80')">
+                    <div class="relative h-80 rounded-3xl overflow-hidden bg-gray-100 mb-4 shadow-sm group-hover:shadow-xl transition-all duration-300">
+                        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80" alt="Painel Ripado MDF" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-bold text-apple-dark uppercase tracking-wider">Sala</div>
+                        <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="bg-white/90 text-apple-dark text-xs font-semibold px-4 py-2 rounded-full flex items-center gap-2">
+                                <i data-lucide="eye" class="w-4 h-4"></i> Ampliar Projeto
+                            </span>
+                        </div>
+                    </div>
+                    <h4 class="font-display text-xl font-bold text-apple-dark group-hover:text-wood-500 transition-colors">Painel Ripado & Rack Flutuante</h4>
+                    <p class="text-xs text-apple-subtle mt-1">MDF Freijó • Sistema Push-to-Open</p>
+                </div>
+
+                <!-- Item 4: Home Office -->
+                <div class="catalog-item office group cursor-pointer" onclick="openModal('Estação Home Office Executive', 'Bancada contínua sob medida com nichos organizadores superiores e passa-cabos embutido.', 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=80')">
+                    <div class="relative h-80 rounded-3xl overflow-hidden bg-gray-100 mb-4 shadow-sm group-hover:shadow-xl transition-all duration-300">
+                        <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=800&q=80" alt="Home Office MDF" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-bold text-apple-dark uppercase tracking-wider">Office</div>
+                        <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="bg-white/90 text-apple-dark text-xs font-semibold px-4 py-2 rounded-full flex items-center gap-2">
+                                <i data-lucide="eye" class="w-4 h-4"></i> Ampliar Projeto
+                            </span>
+                        </div>
+                    </div>
+                    <h4 class="font-display text-xl font-bold text-apple-dark group-hover:text-wood-500 transition-colors">Estação Office Executive</h4>
+                    <p class="text-xs text-apple-subtle mt-1">MDF Louro Freijó & Preto Trama</p>
+                </div>
+
+                <!-- Item 5: Cozinha Premium -->
+                <div class="catalog-item cozinha group cursor-pointer" onclick="openModal('Cozinha Gourmet com Ilha', 'Projeto amplo com ilha central, torre quente sob medida e armários superiores com vidro reflecta.', 'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=1200&q=80')">
+                    <div class="relative h-80 rounded-3xl overflow-hidden bg-gray-100 mb-4 shadow-sm group-hover:shadow-xl transition-all duration-300">
+                        <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80" alt="Cozinha Gourmet" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-bold text-apple-dark uppercase tracking-wider">Cozinha</div>
+                        <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="bg-white/90 text-apple-dark text-xs font-semibold px-4 py-2 rounded-full flex items-center gap-2">
+                                <i data-lucide="eye" class="w-4 h-4"></i> Ampliar Projeto
+                            </span>
+                        </div>
+                    </div>
+                    <h4 class="font-display text-xl font-bold text-apple-dark group-hover:text-wood-500 transition-colors">Cozinha Gourmet com Torre Quente</h4>
+                    <p class="text-xs text-apple-subtle mt-1">MDF Ultra Resistente • Vidro Reflecta</p>
+                </div>
+
+                <!-- Item 6: Quarto Suíte -->
+                <div class="catalog-item quarto group cursor-pointer" onclick="openModal('Painel de Cama Suíte Master', 'Cabeceira estofada com nichos laterais em MDF e mesas de apoio suspensas.', 'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=1200&q=80')">
+                    <div class="relative h-80 rounded-3xl overflow-hidden bg-gray-100 mb-4 shadow-sm group-hover:shadow-xl transition-all duration-300">
+                        <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=800&q=80" alt="Cabeceira Suíte" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-bold text-apple-dark uppercase tracking-wider">Quarto</div>
+                        <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="bg-white/90 text-apple-dark text-xs font-semibold px-4 py-2 rounded-full flex items-center gap-2">
+                                <i data-lucide="eye" class="w-4 h-4"></i> Ampliar Projeto
+                            </span>
+                        </div>
+                    </div>
+                    <h4 class="font-display text-xl font-bold text-apple-dark group-hover:text-wood-500 transition-colors">Painel de Cama Suíte Master</h4>
+                    <p class="text-xs text-apple-subtle mt-1">MDF Rústico & Criado-Mudo Suspenso</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- DIFFERENTIALS / MATERIALS (Apple Detail Focus) -->
+    <section id="diferenciais" class="py-24 bg-apple-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-semibold text-wood-500 uppercase tracking-widest mb-3">Qualidade Sem Concessões</h2>
+                <h3 class="font-display text-3xl sm:text-5xl font-bold text-apple-dark">Por que a nossa marcenaria é diferente?</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <div class="bg-white p-8 rounded-3xl border border-apple-border shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 rounded-2xl bg-wood-50 text-wood-600 flex items-center justify-center mb-6">
+                        <i data-lucide="shield-check" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="font-display text-xl font-bold text-apple-dark mb-3">MDF de Alta Densidade</h4>
+                    <p class="text-sm text-apple-subtle leading-relaxed">
+                        Trabalhamos exclusivamente com chapas tratadas contra cupins, umidade e deformações. Maior durabilidade para cozinhas e banheiros.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl border border-apple-border shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 rounded-2xl bg-wood-50 text-wood-600 flex items-center justify-center mb-6">
+                        <i data-lucide="sliders" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="font-display text-xl font-bold text-apple-dark mb-3">Ferragens Tecnológicas</h4>
+                    <p class="text-sm text-apple-subtle leading-relaxed">
+                        Dobradiças com amortecedores hidráulicos e corrediças telescópicas/ocultas com fechamento suave sem impactos nem ruídos.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl border border-apple-border shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 rounded-2xl bg-wood-50 text-wood-600 flex items-center justify-center mb-6">
+                        <i data-lucide="maximize" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="font-display text-xl font-bold text-apple-dark mb-3">Aproveitamento 100%</h4>
+                    <p class="text-sm text-apple-subtle leading-relaxed">
+                        Aproveitamos recortes, cantos mortos e pés-direitos altos. Cada sapateira ou tulha é planejada especificamente para o espaço real.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE ROOM BUDGET ESTIMATOR / SIMULATOR -->
+    <section id="simulador" class="py-24 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-br from-apple-dark to-gray-900 rounded-3xl p-8 sm:p-12 text-white shadow-2xl relative overflow-hidden">
+                <!-- Decorative Wood Accent Circle -->
+                <div class="absolute -bottom-20 -right-20 w-80 h-80 bg-wood-500/20 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="text-center max-w-2xl mx-auto mb-10">
+                    <span class="inline-block px-3 py-1 rounded-full bg-wood-500/20 border border-wood-500/30 text-wood-300 text-xs font-semibold uppercase tracking-wider mb-3">Simulador Rápido</span>
+                    <h3 class="font-display text-3xl sm:text-4xl font-bold">Monte seu combo de ambientes</h3>
+                    <p class="text-gray-400 text-sm mt-2">Selecione os cômodos que deseja mobiliar para agilizar seu atendimento via WhatsApp.</p>
+                </div>
+
+                <!-- Interactive Checklist Grid -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+                    <label class="room-checkbox flex flex-col items-center p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-wood-500 cursor-pointer transition text-center group">
+                        <input type="checkbox" value="Cozinha Planejada" class="sr-only" onchange="updateSelectedRooms()">
+                        <div class="w-10 h-10 rounded-full bg-white/10 group-hover:bg-wood-500 flex items-center justify-center mb-2 transition">
+                            <i data-lucide="utensils" class="w-5 h-5"></i>
+                        </div>
+                        <span class="text-xs font-semibold">Cozinha</span>
+                    </label>
+
+                    <label class="room-checkbox flex flex-col items-center p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-wood-500 cursor-pointer transition text-center group">
+                        <input type="checkbox" value="Dormitório/Closet" class="sr-only" onchange="updateSelectedRooms()">
+                        <div class="w-10 h-10 rounded-full bg-white/10 group-hover:bg-wood-500 flex items-center justify-center mb-2 transition">
+                            <i data-lucide="bed" class="w-5 h-5"></i>
+                        </div>
+                        <span class="text-xs font-semibold">Dormitório</span>
+                    </label>
+
+                    <label class="room-checkbox flex flex-col items-center p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-wood-500 cursor-pointer transition text-center group">
+                        <input type="checkbox" value="Painel de Sala" class="sr-only" onchange="updateSelectedRooms()">
+                        <div class="w-10 h-10 rounded-full bg-white/10 group-hover:bg-wood-500 flex items-center justify-center mb-2 transition">
+                            <i data-lucide="tv" class="w-5 h-5"></i>
+                        </div>
+                        <span class="text-xs font-semibold">Sala / Painel</span>
+                    </label>
+
+                    <label class="room-checkbox flex flex-col items-center p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-wood-500 cursor-pointer transition text-center group">
+                        <input type="checkbox" value="Banheiro/Lavabo" class="sr-only" onchange="updateSelectedRooms()">
+                        <div class="w-10 h-10 rounded-full bg-white/10 group-hover:bg-wood-500 flex items-center justify-center mb-2 transition">
+                            <i data-lucide="bath" class="w-5 h-5"></i>
+                        </div>
+                        <span class="text-xs font-semibold">Banheiro</span>
+                    </label>
+                </div>
+
+                <!-- Output Action Button -->
+                <div class="text-center">
+                    <p id="simulador-summary" class="text-xs text-wood-300 font-medium mb-4">Selecione pelo menos 1 ambiente acima</p>
+                    <button id="simulador-send-btn" onclick="sendSimuladorWhatsApp()" disabled class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-wood-500 disabled:opacity-50 hover:bg-wood-600 text-white font-semibold px-8 py-4 rounded-2xl shadow-lg transition-all duration-300">
+                        <i data-lucide="send" class="w-5 h-5"></i>
+                        <span>Enviar Seleção para Orçamento (49 99971-0357)</span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER (Clean & Elegant) -->
+    <footer class="bg-apple-dark text-gray-400 py-16 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-gray-800">
+                
+                <!-- Brand Info -->
+                <div class="space-y-4 md:col-span-2">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg wood-badge-gradient flex items-center justify-center text-white">
+                            <svg class="w-5 h-5 stroke-current" viewBox="0 0 24 24" fill="none" stroke-width="2">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                                <path d="M2 17l10 5 10-5"></path>
+                            </svg>
+                        </div>
+                        <span class="font-display font-bold text-lg text-white">MESTRE.MDF</span>
+                    </div>
+                    <p class="text-sm text-gray-400 max-w-sm leading-relaxed">
+                        Especialistas no desenvolvimento de móveis planejados sob medida em MDF de alta resistência. Garantia de alinhamento, precisão técnica e elegância.
+                    </p>
+                </div>
+
+                <!-- Contact Direct Info -->
+                <div class="space-y-3">
+                    <h4 class="text-xs font-bold text-white uppercase tracking-wider">Atendimento Direto</h4>
+                    <p class="text-sm flex items-center gap-2 text-gray-300">
+                        <i data-lucide="phone" class="w-4 h-4 text-wood-500"></i>
+                        (49) 99971-0357
+                    </p>
+                    <p class="text-sm flex items-center gap-2 text-gray-300">
+                        <i data-lucide="map-pin" class="w-4 h-4 text-wood-500"></i>
+                        Atendemos Toda a Região
+                    </p>
+                    <p class="text-sm flex items-center gap-2 text-gray-300">
+                        <i data-lucide="clock" class="w-4 h-4 text-wood-500"></i>
+                        Seg a Sex: 08h às 18h
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="space-y-3">
+                    <h4 class="text-xs font-bold text-white uppercase tracking-wider">Navegação</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#inicio" class="hover:text-wood-400 transition">Início</a></li>
+                        <li><a href="#sobre" class="hover:text-wood-400 transition">Sobre Nós</a></li>
+                        <li><a href="#ambientes" class="hover:text-wood-400 transition">Ambientes</a></li>
+                        <li><a href="#catalogo" class="hover:text-wood-400 transition">Catálogo</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Bottom Credits -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+                <p>&copy; <span id="year"></span> Marcenaria Mestre MDF. Todos os direitos reservados.</p>
+                <p>Design Minimalista Inspirado na Filosofia Apple.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BOTÃO FLUTUANTE DO WHATSAPP (OTIMIZADO PARA CELULAR & ERGONOMIA DO POLEGAR) -->
+    <div class="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-50 flex items-center gap-3 group">
+        <!-- Balão de chamada discreto e atraente (visível no mobile e desktop) -->
+        <a href="https://wa.me/554999710357?text=Olá!%20Gostaria%20de%20solicitar%20uma%20medição%20gratuita%20para%20meu%20projeto." 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="hidden sm:flex items-center gap-2 bg-white/95 backdrop-blur-md text-apple-dark text-xs font-semibold px-4 py-2.5 rounded-2xl shadow-xl border border-gray-200/80 transition-all duration-300 transform group-hover:scale-105 group-hover:-translate-x-1">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+            <span>Agendar Medição Gratuita</span>
+        </a>
+
+        <!-- Botão Principal com pulso suave -->
+        <a href="https://wa.me/554999710357?text=Olá!%20Gostaria%20de%20solicitar%20uma%20medição%20gratuita%20para%20meu%20projeto." 
+           target="_blank" 
+           rel="noopener noreferrer"
+           aria-label="Falar pelo WhatsApp"
+           class="relative w-14 h-14 sm:w-16 sm:h-16 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 transform group-hover:scale-110 active:scale-95">
+            <!-- Animação de pulso externa -->
+            <span class="absolute inset-0 rounded-full bg-emerald-500 opacity-75 animate-ping -z-10 pointer-events-none"></span>
+            
+            <!-- Ícone WhatsApp via SVG limpo -->
+            <svg class="w-7 h-7 sm:w-8 sm:h-8 fill-current" viewBox="0 0 24 24">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l.999 1.594-1.15 4.195 4.301-1.127 1.593.995z"/>
+            </svg>
+        </a>
+    </div>
+
+    <!-- LIGHTBOX / MODAL FOR CATALOG SHOWCASE -->
+    <div id="project-modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-3xl w-full overflow-hidden shadow-2xl relative animate-in fade-in zoom-in duration-300">
+            <button onclick="closeModal()" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-black/50 text-white flex items-center justify-center hover:bg-black/80 transition">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <div class="h-80 bg-gray-200 relative">
+                <img id="modal-img" src="" alt="Projeto Details" class="w-full h-full object-cover">
+            </div>
+            <div class="p-8">
+                <h3 id="modal-title" class="font-display text-2xl font-bold text-apple-dark mb-2"></h3>
+                <p id="modal-desc" class="text-sm text-apple-subtle leading-relaxed mb-6"></p>
+                <div class="flex justify-end gap-3">
+                    <button onclick="closeModal()" class="px-5 py-2.5 rounded-xl border border-gray-300 text-xs font-semibold text-apple-dark hover:bg-gray-100">Fechar</button>
+                    <a id="modal-wa-btn" href="#" target="_blank" class="px-5 py-2.5 rounded-xl bg-wood-500 text-xs font-semibold text-white hover:bg-wood-600 flex items-center gap-2">
+                        <i data-lucide="message-square" class="w-4 h-4"></i> Orçar Este Estilo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Dynamic Year
+        document.getElementById('year').innerText = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Change Hero Image Showcase
+        function changeHeroImage(imgUrl, title) {
+            const heroImg = document.getElementById('hero-image');
+            heroImg.style.opacity = '0';
+            setTimeout(() => {
+                heroImg.src = imgUrl;
+                heroImg.style.opacity = '1';
+            }, 200);
+        }
+
+        // Filter Catalog Items
+        function filterCatalog(category) {
+            const buttons = document.querySelectorAll('.catalog-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-apple-dark', 'text-white');
+                btn.classList.add('bg-gray-100', 'text-apple-dark');
+            });
+            event.target.classList.remove('bg-gray-100', 'text-apple-dark');
+            event.target.classList.add('bg-apple-dark', 'text-white');
+
+            const items = document.querySelectorAll('.catalog-item');
+            items.forEach(item => {
+                if (category === 'todos' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Modal Logic
+        function openModal(title, description, imgUrl) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-desc').innerText = description;
+            document.getElementById('modal-img').src = imgUrl;
+            
+            const encodedMsg = encodeURIComponent(`Olá! Vi o projeto "${title}" no seu site e gostaria de saber mais valores para meu imóvel.`);
+            document.getElementById('modal-wa-btn').href = `https://wa.me/5549999710357?text=${encodedMsg}`;
+
+            document.getElementById('project-modal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('project-modal').classList.add('hidden');
+        }
+
+        // Room Simulator WhatsApp Integration
+        let selectedRooms = [];
+
+        function updateSelectedRooms() {
+            const checkboxes = document.querySelectorAll('.room-checkbox input[type="checkbox"]');
+            selectedRooms = [];
+            
+            checkboxes.forEach(cb => {
+                const label = cb.parentElement;
+                if (cb.checked) {
+                    selectedRooms.push(cb.value);
+                    label.classList.add('border-wood-500', 'bg-white/10');
+                } else {
+                    label.classList.remove('border-wood-500', 'bg-white/10');
+                }
+            });
+
+            const summaryText = document.getElementById('simulador-summary');
+            const sendBtn = document.getElementById('simulador-send-btn');
+
+            if (selectedRooms.length > 0) {
+                summaryText.innerText = `Ambientes Selecionados: ${selectedRooms.join(', ')}`;
+                sendBtn.disabled = false;
+            } else {
+                summaryText.innerText = 'Selecione pelo menos 1 ambiente acima';
+                sendBtn.disabled = true;
+            }
+        }
+
+        function sendSimuladorWhatsApp() {
+            if (selectedRooms.length === 0) return;
+            const message = encodeURIComponent(`Olá! Selecionei os seguintes ambientes no simulador do site para orçamento em MDF: ${selectedRooms.join(', ')}. Podemos agendar a medição no meu imóvel?`);
+            window.open(`https://wa.me/5549999710357?text=${message}`, '_blank');
+        }
+    </script>
+</body>
+</html>
